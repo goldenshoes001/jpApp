@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app/cummon/imagepaths.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,28 +11,27 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/grafics/burger.png'),
-            Image.asset('assets/grafics/cupake_chick.png'),
-            Image.asset('assets/grafics/cupake_cat.png'),
-            Image.asset('assets/grafics/icecream_cone.png'),
-            Image.asset('assets/grafics/icecream_stick.png'),
-            Image.asset('assets/grafics/icecream.png'),
-            Image.asset('assets/grafics/star.png'),
-
-            Image.asset('assets/backgrounds/bg_mainscreen.png'),
-            Image.asset('assets/backgrounds/bg_startscreen.png'),
-
-            Image.asset('assets/details/cut_card.png'),
-            Image.asset('assets/details/snack_snack.png'),
+            SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Image(
+                image: AssetImage(
+                  imagePaths
+                      .where(
+                        (element) => element.contains("bg_startscreen.png"),
+                      )
+                      .first,
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       ),
-      debugShowCheckedModeBanner: false,
-      title: 'JP App',
     );
   }
 }
