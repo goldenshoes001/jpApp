@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jp_app/cummon/imagepaths.dart';
+import 'package:jp_app/Screens/startScreen/presentation/start_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,26 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
-              child: Image(
-                image: AssetImage(
-                  imagePaths
-                      .where(
-                        (element) => element.contains("bg_startscreen.png"),
-                      )
-                      .first,
-                ),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
-        ),
-      ),
+      home: Scaffold(body: const Startscreen()),
     );
   }
 }
