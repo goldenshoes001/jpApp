@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jp_app/Screens/startScreen/widgets/button.dart';
+import 'package:jp_app/theme/theme.dart' as theme;
 
 class Textfeld extends StatelessWidget {
   const Textfeld({super.key});
@@ -11,19 +12,21 @@ class Textfeld extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Positioned(
-      left: screenWidth * 0.1,
-      right: screenWidth * 0.1,
-      top: screenHeight * 0.65,
+      left: screenWidth * theme.positionvalueLeftTextField,
+      right: screenWidth * theme.positionvalueRightTextField,
+      top: screenHeight * theme.positionvalueTopTextField,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(theme.radius),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+          filter: ImageFilter.blur(sigmaX: theme.sigmaX, sigmaY: theme.sigmaY),
           child: Container(
-            decoration: BoxDecoration(color: Colors.black.withAlpha(20)),
+            decoration: BoxDecoration(
+              color: theme.decorationColorTextField.withAlpha(theme.alphaValue),
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 20.0,
+                horizontal: theme.paddingHorizontalTextField,
+                vertical: theme.paddingVerticalTextField,
               ),
               child: Column(
                 children: [
@@ -31,24 +34,24 @@ class Textfeld extends StatelessWidget {
                     "Feeling Snackish today?",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "Arial",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      fontFamily: theme.fontFamily,
+                      fontSize: theme.fontSizeTextTextfeld,
+                      fontWeight: theme.fontweightTextTextfield,
+                      color: theme.textColor,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: theme.sizedBoxBetweenHeaderAndText),
                   Text(
                     "Explore Angi's most popular snack selection and get instantly happy",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "Arial",
-                      fontSize: 13,
+                      fontFamily: theme.fontFamily,
+                      fontSize: theme.fontSizeTextTextfeldToo,
 
-                      color: Colors.white,
+                      color: theme.textColor,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: theme.sizedBoxBetweenTextAndButton),
                   Button(),
                 ],
               ),

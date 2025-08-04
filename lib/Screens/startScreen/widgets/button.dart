@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_app/theme/theme.dart' as theme;
 
 class Button extends StatelessWidget {
   final String text;
@@ -19,25 +20,20 @@ class Button extends StatelessWidget {
   final double offset2;
   const Button({
     super.key,
-    this.text = "Order Now",
+    this.text = theme.text,
     this.onPressed,
-    this.width = 200,
-    this.height = 45.0,
-    this.gradientColors = const [Color(0xFFE970C4), Color(0xFFF69EA3)],
-    this.radius = 10.0,
-    this.textColor = Colors.white,
-    this.padding = 1.0,
-    this.offset = 0.0,
-    this.offset2 = 1.0,
-    this.blurRadius = 90.0,
-    this.fontSize = 18.0,
-    this.fontWeight = FontWeight.w600,
-    this.shimmerColors = const [
-      Color.fromRGBO(254, 200, 241, 0.8),
-      Color.fromRGBO(237, 146, 215, 0),
-      Color.fromRGBO(237, 146, 215, 0),
-      Color.fromRGBO(237, 146, 215, 0),
-    ],
+    this.width = theme.width,
+    this.height = theme.height,
+    this.gradientColors = theme.gradientColors,
+    this.radius = theme.radius,
+    this.textColor = theme.textColor,
+    this.padding = theme.padding,
+    this.offset = theme.offset,
+    this.offset2 = theme.offset2,
+    this.blurRadius = theme.blurRadius,
+    this.fontSize = theme.fontSize,
+    this.fontWeight = theme.fontWeight,
+    this.shimmerColors = theme.shimmerColors,
   });
 
   @override
